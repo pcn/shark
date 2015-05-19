@@ -171,7 +171,7 @@ local function compile(srcfile, objfile)
    local linuxinc = string.format("/lib/modules/%s/build/", release)
    local bpfinc = "bpf/libbpf"
 
-   local clang_cmd = string.format("clang -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/4.8/include -I%s -I%s/arch/x86/include -I%s/arch/x86/include/generated/uapi -I%s/arch/x86/include/generated  -I%s/include -I%s/arch/x86/include/uapi -I%s/arch/x86/include/generated/uapi -I%s/include/uapi -I%s/include/generated/uapi -include %s/include/linux/kconfig.h %s -D__KERNEL__ -Wno-unused-value -Wno-pointer-sign -O2 -emit-llvm -x c -c %s -o %s", bpfinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, bpf.cargs_extra, srcfile, objfile)
+   local clang_cmd = string.format("clang -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/4.9/include -I%s -I%s/arch/x86/include -I%s/arch/x86/include/generated/uapi -I%s/arch/x86/include/generated  -I%s/include -I%s/arch/x86/include/uapi -I%s/arch/x86/include/generated/uapi -I%s/include/uapi -I%s/include/generated/uapi -include %s/include/linux/kconfig.h %s -D__KERNEL__ -Wno-unused-value -Wno-pointer-sign -O2 -emit-llvm -x c -c %s -o %s", bpfinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, linuxinc, bpf.cargs_extra, srcfile, objfile)
 
   os.execute(clang_cmd)
 end
@@ -275,4 +275,3 @@ bpf.print_hist_map = function(t)
 end
 
 return bpf
-

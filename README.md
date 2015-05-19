@@ -43,6 +43,33 @@ We're building a better performance management system, which include API, consis
 More samples can be found in samples/ directory.
 
 
+## Building
+
+### Ubuntu:
+Install the following, and their dependencies:
+
+- automake
+- autoconf
+- autotools-dev 
+- libtool
+- libelf-dev
+
+#### For 15.04
+15.04 is using gcc 4.9, and so references to paths with "4.8" in the includes occur in the following files:
+
+```
+perf/perf.dle
+bpf/bpf.d
+bpf/libbpf/libbpf.d
+bpf/libbpf/bpf_load.d
+bpf/bpf.lua 
+core/shark.d
+core/luv/luv.d
+```
+
+These need to be changed to 4.9.
+
+
 ## Motivation
 
 Currently System Performance Management is painful(and suck).

@@ -1,9 +1,9 @@
 core/luv/luv.o: core/luv/luv.c /usr/include/stdc-predef.h core/luv/luv.h \
- core/luajit/src/lua.h /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ core/luajit/src/lua.h /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stdarg.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stddef.h \
  core/luajit/src/luaconf.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/features.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -24,7 +24,7 @@ core/luv/luv.o: core/luv/luv.c /usr/include/stdc-predef.h core/luv/luv.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  core/libuv/include/uv-version.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h core/libuv/include/uv-unix.h \
  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
  /usr/include/endian.h /usr/include/x86_64-linux-gnu/bits/endian.h \
