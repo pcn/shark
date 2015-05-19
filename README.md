@@ -70,6 +70,29 @@ core/luv/luv.d
 These need to be changed to 4.9.
 
 
+#### To use the mainline kernel with ebpf
+
+Follow the instructions to install a kernel, at:
+https://wiki.ubuntu.com/Kernel/MainlineBuilds.  One those packages are
+installed, a few header files will need to be judiciously moved around
+in order to get the user api to include perf+ebpf:
+
+```
+$ sudo mv /usr/include/linux/perf_event.h /usr/include/linux/perf_event_dist.h 
+$ sudo cp /usr/src/linux-headers-4.1.0-040100rc2/include/uapi/linux/perf_event.h  /usr/include/linux/perf_event_with_ebpf.h
+$ cd /usr/include/linux
+$ sudo ln -s perf_event_with_ebpf.h perf_event.h
+$ sudo mv /usr/include/linux/bpf.h /usr/include/linux/bpf.h_dist
+$ sudo mv /usr/include/linux/bpf_common.h /usr/include/linux/bpf_common.h_dist
+$ sudo cp /usr/src/linux-headers-4.1.0-040100rc2/include/uapi/linux/bpf.h /usr/include/linux/bpf.h
+$ sudo cp /usr/src/linux-headers-4.1.0-040100rc2/include/uapi/linux/bpf_common.h /usr/include/linux/bpf_common.h
+```
+
+The above will move aside the headers that come with your version of
+ubuntu, and replace them with the version from the mainline kernel.
+This needs to be un-done if you want to revert to the ubuntu kernel, or
+compiling low-level tools may get very difficult in the future.
+
 ## Motivation
 
 Currently System Performance Management is painful(and suck).
